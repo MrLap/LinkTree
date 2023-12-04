@@ -33,6 +33,7 @@ body *{
 }
 
 body{
+    height: 100vh;
     background: var(--bg-url);
     /* background-image: url(./assets/bg-mobile.jpg); */
     /* background-image: var(--bg-url); */
@@ -41,10 +42,11 @@ body{
     background-position: top center; /*alinha pelo centro e pela cabeça */
     background-size: cover; /*preenche todo espaço visivel*/}
     
+    
 #conteiner{
     /* border: 3px solid rgb(238, 5, 5); */
-    height: 712px;
-    width : 360px;
+    height: 100%;
+    max-width: 408px;
     /*essa magin auto deixa o elemento com a mesma
     distancia da esquerda e da direita*/
     margin: auto;
@@ -63,15 +65,17 @@ body{
     text-align: center;
     /* adicionando preencimento de 24px */
     padding: 24px;
+    margin-top: -24px;
 }
 
 #profile img{
     /* border: 3px solid rgb(4, 121, 0); */
-    width: 112px; /*há necessidade de definir só altura ou solargura*/
+    width: 112px;
+    /*há necessidade de definir só altura ou solargura*/
     /* deixando a imagem quadrada redonda */
     border-radius: 50%; }
     
-    #profile p{
+#profile p{
     /* border: 3px solid tomato; */
     font-weight: 500;
     font-size: 16px;
@@ -105,12 +109,22 @@ body{
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+    animation: slide-back 0.6s;
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    /* right: 0;
+    left: initial; */
+    animation: slide-in 0.6s forwards;
+
 }
+
+#switch button:hover{
+
+    outline:  8px solid var(--highlight-collor);
+
+}
+
 
 /* 
 span por padrão tem o display inline não aceita parametros de largura
@@ -192,4 +206,41 @@ footer{
     padding: 16px;
     font-size: 14px;
 }
+
+@media (min-width: 700px) {
+    
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+    
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animação */
+
+@keyframes slide-in {
+
+    from {
+    left: 0;
+    }
+
+    to {
+    left: 50%;
+    }
+
+}
+
+@keyframes slide-back {
+
+    from {
+    left: 50%;
+    }
+
+    to {
+    left: 0;
+    }
+}
+
 
