@@ -1,0 +1,11 @@
+para escolher a fonte vamos ao google fontes escolhemos a fonte
+ou digitamos a funte pretendida pegamos o link e inserimos encima do utf-8 sejam quantas fontes forem ser usadas no PROJETO
+
+ctrl shift p para identar automaticamente o codigo
+
+a forma de usar a fonte tambem é fornecida como algo assim:
+font-family: 'Andika', sans-serif;
+
+utilizando padding dentro do conteiner conseguimos diminuir o tamanho dos elementos filhos
+
+

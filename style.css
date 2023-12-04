@@ -1,0 +1,195 @@
+/* anulando toda formatação vinda do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    /* mandando as confugurações respeirarem o tamanho do conteiner */
+    box-sizing: border-box;
+}
+
+:root{
+    --text-collor: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-collor: rgba(255, 255, 255, 0.5);
+    --surface-collor: rgba(255, 255, 255, 0.1);
+    --surface-collor-hoover: rgba(255, 255, 255, 0.05);
+    --highlight-collor: rgba(255, 255, 255, 0.5);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+    --text-collor: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-collor: rgba(0, 0, 0, 0.5);
+    --surface-collor: rgba(0, 0, 0, 0.1);
+    --surface-collor-hoover: rgba(0, 0, 0, 0.05);
+    --highlight-collor: rgba(10, 10, 10, 0.5);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+/* elemento universal usa asterisco */
+body *{
+    font-family: 'Andika', sans-serif;
+    color: var(--text-collor);
+}
+
+body{
+    background: var(--bg-url);
+    /* background-image: url(./assets/bg-mobile.jpg); */
+    /* background-image: var(--bg-url); */
+    
+    background-repeat: no-repeat; /*não repete a imagem*/
+    background-position: top center; /*alinha pelo centro e pela cabeça */
+    background-size: cover; /*preenche todo espaço visivel*/}
+    
+#conteiner{
+    /* border: 3px solid rgb(238, 5, 5); */
+    height: 712px;
+    width : 360px;
+    /*essa magin auto deixa o elemento com a mesma
+    distancia da esquerda e da direita*/
+    margin: auto;
+    /* adicionando 56px de margem do conteirer principal para cima; */
+    margin-top: 56px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 200px;
+    padding: 0 24px;
+}
+
+#profile{
+    /* border: 3px solid rgb(213, 255, 2); */
+    /*a utilização de alinhamento no elemento pai
+     centraliza a imagem abaixo*/
+    text-align: center;
+    /* adicionando preencimento de 24px */
+    padding: 24px;
+}
+
+#profile img{
+    /* border: 3px solid rgb(4, 121, 0); */
+    width: 112px; /*há necessidade de definir só altura ou solargura*/
+    /* deixando a imagem quadrada redonda */
+    border-radius: 50%; }
+    
+    #profile p{
+    /* border: 3px solid tomato; */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* adicionando 8px de distancia entre o @ e a foto */
+
+}
+
+#switch{
+    /* border: 1px solid red; */
+    position: relative;
+    /* colocando em um mesmo tamanho o conteiner */
+    width: 64px;
+    /* alinhando o menu switch no centro */
+    margin: 4px auto;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: white;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* alinhando posicionamento do liga desliga absoluto  */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+/* 
+span por padrão tem o display inline não aceita parametros de largura
+então mudamos para display block */
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-collor);
+    border: 1px solid var(--stroke-collor);
+    border-radius: 99px;
+    backdrop-filter: blur(4px);
+    --webkit-backdrop-filter: blur(4px);
+}
+
+
+ul{
+    /* margin-top: 30px; */
+    /* border: 3px solid green; */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px 0;
+}
+
+ul li{
+    text-align: center;
+    align-items: center;
+    background: var(--surface-collor);
+    border: 2px solid var(--stroke-collor);
+    border-radius: 10px;
+    padding: 16px 24px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background 0.2s;
+
+}
+
+ul li:hover{
+    
+    background: var(--surface-collor-hoover);
+    border: 1.5px solid var(--text-collor);
+}
+
+
+ul li a{   
+    text-decoration: none;
+    font-weight:  500;
+}
+
+#social-links{
+    /* border: solid white; */
+    display: flex;
+    /* gap: 16px; */
+    padding: 10px 0;
+    font-size: 24px;
+    justify-content: center;
+}
+
+#social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50% ;
+    transition: background 0.2s;
+}
+
+#social-links a:hover{
+    background: var(--highlight-collor);
+    padding: 16px;
+}
+
+footer{
+    /* border: solid white; */
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+}
+
